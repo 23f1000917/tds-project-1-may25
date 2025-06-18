@@ -126,7 +126,7 @@ class SolutionCreator():
                     post_id = '/'.join(post['post_url'].split('/')[-2:])
                     if source_id == post_id:
                         context_links.append(dict(
-                            url = source_url,
+                            url = post['post_url'],
                             text = post['markdown']
                         ))
                 
