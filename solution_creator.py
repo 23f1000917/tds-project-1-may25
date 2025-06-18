@@ -70,7 +70,7 @@ class SolutionCreator():
             "You are a Retrieval-Augmented Generation (RAG) assistant. "
             "You've been provided with context snippets from an online forum that belongs to an educational institution. "
             "Your purpose is to answer student queries based on the context. Make sure to include ALL the information relevant "
-            "to the student query in your crafter answer. \n\n"
+            "to the student query in your crafted answer. \n\n"
             "IMPORTANT NOTES:\n"
             "1. Context snippets may be:\n"
             " - Fragmented or incomplete\n"
@@ -159,7 +159,7 @@ class SolutionCreator():
 
 
 
-    def _get_most_similar_indices(self, query_embedding, k=10):
+    def _get_most_similar_indices(self, query_embedding, k=15):
 
         # load embeddings 
         embed_data = np.load('embed_data.npz')
