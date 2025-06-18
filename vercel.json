@@ -1,39 +1,34 @@
 {
-    "builds": [
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/app.py"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
         {
-            "src": "app.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/",
-            "dest": "app.py",
-            "methods": ["GET"] 
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         },
         {
-            "src": "/api",
-            "dest": "app.py",
-            "methods": ["POST", "OPTIONS"]  
-        }
-    ],
-    "headers": [
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
         {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "GET, POST, OPTIONS"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "Content-Type"
-                }
-            ]
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
         }
-    ]
+      ]
+    }
+  ]
 }
