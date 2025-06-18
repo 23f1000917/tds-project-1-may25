@@ -69,7 +69,8 @@ class SolutionCreator():
         text_prompt = (
             "You are a Retrieval-Augmented Generation (RAG) assistant. "
             "You've been provided with context snippets from an online forum that belongs to an educational institution. "
-            "Your purpose is to answer student queries based on the context. \n\n"
+            "Your purpose is to answer student queries based on the context. Make sure to include ALL the information relevant "
+            "to the student query in your crafter answer. \n\n"
             "IMPORTANT NOTES:\n"
             "1. Context snippets may be:\n"
             " - Fragmented or incomplete\n"
