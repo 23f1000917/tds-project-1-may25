@@ -11,10 +11,6 @@ def add_cors(response):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"  
     return response
 
-@app.get('/')
-def index():
-    return 'This app is working, send a post request to /api endpoint to use it.'
-
 @app.post('/api') 
 def api():
     query = request.get_json()
