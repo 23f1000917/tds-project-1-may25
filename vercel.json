@@ -14,7 +14,7 @@
         {
             "src": "/api",
             "dest": "app.py",
-            "methods": ["POST", "OPTIONS"]  // Add OPTIONS for preflight requests
+            "methods": ["POST", "OPTIONS"]  
         }
     ],
     "headers": [
